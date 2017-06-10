@@ -3,7 +3,7 @@
         <div class="panel-body">
           <div class="col-sm-6">
             <h3>Bar Chart</h3>
-            <Chart v-bind:chartId="'barchart'" :columns="barData" :types="types">
+            <Chart chartId="'barchart'" v-bind:columns="barData" :types="types">
             </Chart>
           </div>
           </div>
@@ -30,9 +30,10 @@ export default {
 
   mounted () {
     console.log('bar chart mounted')
+    var self = this
     setTimeout(function () {
       console.log('fired')
-      this.barData = [['data1', 30, 20, 50, 40, 60, 50, 100, 200]]
+      self.barData = [ ['data1', 300, 350, 300, 400, 100, 100], ['data2', 130, 100, 140, 200, 150, 50] ]
     }, 400)
   }
 }

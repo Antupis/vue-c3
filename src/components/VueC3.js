@@ -41,5 +41,12 @@ export default Vue.extend({
         types: this.types
       }
     })
+  },
+  watch: {
+    columns: function () {
+      this.chart.load({
+        columns: this.columns
+      })
+    }
   }
 })
