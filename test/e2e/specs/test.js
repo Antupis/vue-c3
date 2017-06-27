@@ -8,12 +8,12 @@ module.exports = {
     // see nightwatch.conf.js
     const devServer = browser.globals.devServerURL
 
-    browser
-      .url(devServer)
-      .waitForElementVisible('#app', 5000)
-      .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to Your Vue.js App')
-      .assert.elementCount('img', 1)
+    browser.url(devServer)
+      .waitForElementVisible('body', 10000  )
+      .assert.containsText('h1', 'Charts')
+      .assert.containsText('h3:nth-of-type(1)','Area Chart')
+      .assert.containsText('body > div > div:nth-child(4) > div > div > h3','Line Chart')
+      .assert.containsText('body > div > div:nth-child(6) > div > div > h3','Bar Chart')
       .end()
   }
 }
